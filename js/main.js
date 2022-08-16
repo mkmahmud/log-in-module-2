@@ -2,22 +2,45 @@
 
 const ldep = document.querySelector('#ldep');
 const lwith = document.querySelector('#lwith');
-let mainBal = document.querySelector('#mainBal');
-let maiB = mainBal.value;
 
-let newBal = 0;
 
 
 
 const addMoney = document.querySelector('#add');
 
 addMoney.addEventListener('click', function(){
-    const addedval = document.querySelector('#addMoney').value;
+    const addedvalm = document.querySelector('#addMoney');
+    const addedval = parseInt(document.querySelector('#addMoney').value);
+    
+    
+    if(addedval > 0 && addedval < 10000){
+
+        let mainBal = document.querySelector('#mainBal');
+        let maiB = parseInt(mainBal.value);
+        ldep.value = addedval;
+        mainBal.value = maiB + addedval;
+        addedvalm.value = ' ';
+    }
+});
+
+
+const withdraw = document.querySelector('#withdraw');
+
+withdraw.addEventListener('click', function(){
+
+    const withdrawMoneym = document.querySelector('#withdrawMoney');
+    const withdrawMoney = parseInt(document.querySelector('#withdrawMoney').value);
+
     
 
-    if(addedval > 0 && addedval < 10000){
-        ldep.value = addedval;
-        newBal += addedval;
-        console.log(newBal)
+    let mainBal = document.querySelector('#mainBal');
+    let maiB = parseInt(mainBal.value);
+
+    if(withdrawMoney < maiB  ){
+        lwith.value = withdrawMoney;
+        mainBal.value = maiB - withdrawMoney;
+
+        withdrawMoneym.value = '';
     }
+
 })
