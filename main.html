@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Bank Home Page</title>
     <!-- Tailwind Css -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -16,20 +16,32 @@
         <div class="grid grid-cols-3 gap-4 w-9/12 m-auto topBar mt-12 text-white">
             <div class="diposit bg-stone-800 p-4 rounded-xl">
                 <h2 class="text-4xl">Last Diposit</h2>
-                <p class="text-3xl py-2">$190</p>
+                <p>$<input type="number" class="bg-stone-800 outline-none text-3xl w-9/12" disabled  name="" id="ldep" value="00"></p>
             </div>
             <div class="diposit bg-lime-600 p-4 rounded-xl">
                 <h2 class="text-4xl">Last Withdraw</h2>
-                <p class="text-3xl py-2">$190</p>
+                <p>$<input type="number" class="bg-lime-600 outline-none text-3xl w-9/12" disabled  name="" id="lwith" value="00"></p>
             </div>
             <div class="diposit bg-violet-600 p-4 rounded-xl">
                 <h2 class="text-4xl">Blance</h2>
-                <p class="text-3xl py-2">$190</p>
+                <p>$<input type="number" class="bg-violet-600 outline-none text-3xl w-9/12" disabled  name="" id="mainBal" value="0"></p>
             </div>
         </div>
 
         <!-- Add money -->
+        <div class="grid grid-cols-2 gap-4 w-9/12 m-auto mt-12"> 
+            <div class="add bg-yellow-400 p-5 ">
+                <input type="text" class="m-2 p-2 w-full outline-none" id="addMoney" placeholder="Some money"> <br>
+                <button class="m-2 p-2 w-full outline-none bg-green-500 text-white" id="add" >ADD </button>
+            </div>
+            <div class="add bg-pink-400 p-5 ">
+                <input type="text" class="m-2 p-2 w-full outline-none" id="withdrawMoney" placeholder="Withdraw money"> <br>
+                <button class="m-2 p-2 w-full outline-none bg-red-500 text-white" id="withdraw" >Withdraw  </button>
+            </div>
+        </div>
     </main>
     
+    <!-- Js -->
+    <script src="js/main.js"></script>
 </body>
 </html>
